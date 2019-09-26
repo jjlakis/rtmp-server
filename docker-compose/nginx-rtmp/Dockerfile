@@ -4,7 +4,7 @@ FROM buildpack-deps:stretch
 LABEL Description="Based on tiangolo/nginx-rtmp-docker"
 
 # Versions of Nginx and nginx-rtmp-module to use
-ENV NGINX_VERSION nginx-1.17.0
+ENV NGINX_VERSION nginx-1.17.4
 ENV NGINX_RTMP_MODULE_COMMIT 3bf75232676da7eeff85dcd0fc831533a5eafe6b
 
 # Install dependencies
