@@ -32,7 +32,7 @@ RUN mkdir -p /tmp/build/nginx-rtmp-module && \
 RUN cd /tmp/build/nginx/${NGINX_VERSION} && \
     ./configure \
         --sbin-path=/usr/local/sbin/nginx \
-        --conf-path=/etc/nginx/nginx.conf \
+        --conf-path=/etc/nginx/nginx-rtmp.conf \
         --error-log-path=/var/log/nginx/error.log \
         --pid-path=/var/run/nginx/nginx.pid \
         --lock-path=/var/lock/nginx/nginx.lock \
@@ -50,15 +50,12 @@ RUN cd /tmp/build/nginx/${NGINX_VERSION} && \
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
-# Set up config file
-COPY nginx.conf /etc/nginx/nginx.conf
-
 # Set up sites such as stats webpage file
 RUN mkdir -p /var/www/html && \
     cp /tmp/build/nginx-rtmp-module/nginx-rtmp-module/stat.xsl /var/www/html/stat.xsl
 
-COPY crossdomain.xml /var/www/html/crossdomain.xml
-COPY default /etc/nginx/sites-enabled/default
+#COPY crossdomain.xml /var/www/html/crossdomain.xml
+#COPY default /etc/nginx/sites-enabled/default
 
 # remove temp files
 RUN rm -rf /tmp/build
