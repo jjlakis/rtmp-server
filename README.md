@@ -8,5 +8,29 @@ Deploy your own RTMP Server (nginx-rtmp) & WEB video players (RTMP, HLS) on your
 ## Requirements
 
 * VPS / local server with public IP and ports `80`, `443` & `1935` accessible from public
-* `yourdomain.com` domain with DNS A records for `yourdomain.com` & `*.yourdomain.com` pointing to your VPS IP
+* `yourdomain.com` domain with DNS A record for `*.yourdomain.com` pointing to your VPS IP
 * `docker-compose` installed
+
+## How to use
+
+1. Ensure that you have all requirements met. Check if subdomains actually points to your public IP:
+```
+$ dig +noall +answer hls.yourdomain.com
+hls.yourdomain.com.               3600    IN      A       51.92.19.220
+```
+
+2. Generate TLS certificates for your HTTP domains:
+```
+$ docker-compose run certbot certonly -d hls.lakis.eu -d flash.lakis.eu --standalone
+```
+
+3. Start servers:
+```
+docker-compose up -d
+```
+
+4. Now you can:
+* Stream (e.g. by OBS) to your endpoint: `rtmp://rtmp.yourdomain.com/live`
+* Watch your stream on Flash-based WEB RTMP player: `https://flash.yourdomain.com`
+* Watch your stream via HLS: `https://hls.yourdomain.com`
+
