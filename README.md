@@ -7,6 +7,6 @@ Deploy your own RTMP Server (nginx-rtmp) & WEB video players (RTMP, HLS) on your
 
 ## Requirements
 
-* VPS server with public IP
+* VPS / local server with public IP and ports `80`, `443` & `1935` accessible from public
 * `yourdomain.com` domain with DNS A records for `yourdomain.com` & `*.yourdomain.com` pointing to your VPS IP
 * `docker-compose` installed
