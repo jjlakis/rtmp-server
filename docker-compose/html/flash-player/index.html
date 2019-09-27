@@ -1,1 +1,20 @@
-flash player
+<HEad>
+  <link href="https://vjs.zencdn.net/6.2.0/video-js.css" rel="stylesheet">
+
+  <!-- If you'd like to support IE8 --> 
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+</head>
+
+<body>
+  <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup='{"techorder" : ["flash"]}'>
+    <source src="rtmp://rtmp.lakis.eu:1935/jj/jj" type="rtmp/mp4">
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+
+  <script src="https://vjs.zencdn.net/6.2.0/video.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script>
+</body>
+

@@ -1,1 +1,11 @@
-hls player
+<video-js id=example-video width=960 height=540 class="vjs-default-skin" controls liveui="true" preload="none">
+  <source
+     src="https://hls.lakis.eu/jj/jj.m3u8"
+     type="application/x-mpegURL">
+</video-js>
+<link href="https://vjs.zencdn.net/6.2.0/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/6.2.0/video.js"></script>
+<script>
+  var player = videojs('example-video');
+  player.play();
+</script>
