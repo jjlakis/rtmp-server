@@ -36,3 +36,7 @@ docker-compose up -d
 * Watch your stream via HLS: `https://hls.yourdomain.com`
 
 
+### TODOs:
+ - [ ] Information in README.md when no certs needed (or exists)
+ - [ ] Check directory for generated certs (certbot CLI)
+
