@@ -31,7 +31,8 @@ docker-compose up -d
 ```
 
 4. Now you can:
-* Stream (e.g. by OBS) to your endpoint: `rtmp://rtmp.yourdomain.com/live`
+* Stream (e.g. by OBS) to your endpoint: `rtmp://rtmp.yourdomain.com/live/<your-key>` & receive RTMP signal from the same endpoint.
 * Watch your stream on Flash-based WEB RTMP player: `https://flash.yourdomain.com`
 * Watch your stream via HLS: `https://hls.yourdomain.com`
+
 
