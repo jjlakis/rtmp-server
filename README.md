@@ -39,4 +39,4 @@ docker-compose up -d
 ### TODOs:
  - [ ] Information in README.md when no certs needed (or exists)
  - [ ] Check directory for generated certs (certbot CLI)
-
+ - [ ] Find some way to template domains in NGINX config
