@@ -40,3 +40,6 @@ docker-compose up -d
  - [ ] Information in README.md when no certs needed (or exists)
  - [ ] Check directory for generated certs (certbot CLI)
  - [ ] Find some way to template domains in NGINX config
+ - [ ] HLS sharing between services
+ - [ ] Condition if we want to use public or local addresses (??)
+ - [ ] Helm chart
