@@ -1,6 +1,16 @@
 version: '3'
 
 services:
+  # RTMP server
+  nginx-rtmp:
+    build:
+      context: ./nginx-rtmp
+    volumes:
+      - ./nginx-rtmp/nginx-rtmp.conf:/etc/nginx/nginx-rtmp.conf
+    ports:
+      - "1935:1935"
+
+  # nginx for HLS & Flash players & HLS chunks
   nginx:
     image: nginx
     ports:
@@ -10,13 +20,8 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./html:/html # Root of HTML data
       - ./le:/le # Let's Encrypt certificates
-  nginx-rtmp:
-    build:
-      context: ./nginx-rtmp
-    volumes:
-      - ./nginx-rtmp/nginx-rtmp.conf:/etc/nginx/nginx-rtmp.conf
-    ports:
-      - "1935:1935"
+
+  # For requesting certs
   certbot:
     image: certbot/certbot
     ports:
