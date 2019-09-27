@@ -8,7 +8,7 @@ Deploy your own RTMP Server (nginx-rtmp) & WEB video players (RTMP, HLS) on your
 ## Requirements
 
 * VPS / local server with public IP and ports `80`, `443` & `1935` accessible from public
-* `yourdomain.com` domain with DNS A record for `*.yourdomain.com` pointing to your VPS IP
+* `yourdomain.com` domain with DNS A record for `*.yourdomain.com` (more specific `hls.` & `flash.`) pointing to your VPS IP
 * `docker-compose` installed
 
 ## How to use
@@ -21,8 +21,9 @@ hls.yourdomain.com.               3600    IN      A       51.92.19.220
 
 2. Generate TLS certificates for your HTTP domains:
 ```
-$ docker-compose run certbot certonly -d hls.lakis.eu -d flash.lakis.eu --standalone
+$ docker-compose run --rm --service-ports certbot certonly -d hls.yourdomain.com -d flash.yourdomain.com --standalone
 ```
+Note: certbot runs in stand-alone mode - it binds `:80` on your system.
 
 3. Start servers:
 ```
