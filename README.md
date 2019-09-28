@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/jjlakis/rtmp-server.svg?branch=master)](https://travis-ci.com/jjlakis/rtmp-server)
+
 # RTMP-Server
 
 Deploy your own RTMP Server (nginx-rtmp) & WEB video players (RTMP, HLS) on your domain. docker-compose setup containing:
