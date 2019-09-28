@@ -43,5 +43,5 @@ docker-compose up -d
  - [ ] HLS sharing between services
  - [ ] Condition if we want to use public or local addresses (??)
  - [ ] RTMPS support (stunnel)
- - [ ] Multiple endpoints on the same VPS
+ - [ ] Multiple endpoints on the same VPS: starting with vhost-based rtmp endpoint
  - [ ] Helm chart
