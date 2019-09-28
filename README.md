@@ -42,4 +42,6 @@ docker-compose up -d
  - [ ] Find some way to template domains in NGINX config
  - [ ] HLS sharing between services
  - [ ] Condition if we want to use public or local addresses (??)
+ - [ ] RTMPS support (stunnel)
+ - [ ] Multiple endpoints on the same VPS
  - [ ] Helm chart
