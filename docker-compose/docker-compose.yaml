@@ -7,6 +7,7 @@ services:
       context: ./nginx-rtmp
     volumes:
       - ./nginx-rtmp/nginx-rtmp.conf:/etc/nginx/nginx-rtmp.conf
+      - ./html/hls-fragments:/hls-fragments
     ports:
       - "1935:1935"
 
