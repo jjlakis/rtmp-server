@@ -29,7 +29,7 @@ Note: certbot runs in stand-alone mode - it binds `:80` on your system.
 
 3. Start servers:
 ```
-docker-compose up -d
+docker-compose up -d nginx nginx-rtmp
 ```
 
 4. Now you can:
